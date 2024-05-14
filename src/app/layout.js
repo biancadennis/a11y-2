@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import styles from "./page.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +11,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className={styles.grid}>
+          <a href="/">Home</a>
+          <a href="semantics">Semantic vs. NonSemantic HTML</a>
+          <a href="https://biancadennis.github.io/accessibility-university/">Activity</a>
+        </nav>
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
